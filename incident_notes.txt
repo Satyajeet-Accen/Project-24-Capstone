@@ -1,0 +1,10 @@
+INCIDENT REPORT: Manual Chaos Test
+Target: satyajeet-chaos-instance (Web Service)
+
+1. Action: Stop service
+- Procedure: Initiated a manual stop of the underlying EC2 instance via the AWS Management Console to simulate a severe host failure.
+- Result: The web service became completely unresponsive, confirming the failure condition.
+
+2. Action: Restart and verify recovery
+- Procedure: Initiated a start command for the EC2 instance. Wait period observed for system boot and systemd to initialize the httpd service.
+- Result: The web service successfully recovered. Connectivity tests to port 80 confirmed the application was accessible and serving traffic normally again.
